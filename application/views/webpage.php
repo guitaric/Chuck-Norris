@@ -204,6 +204,7 @@ fetch('http://api.icndb.com/jokes/random/3').then(function (response) {
 
 	//show/hide joke and change button text
 	document.addEventListener('click', function(e) {
+		if(e.target.tagName === "BUTTON") {
 		(e.target.textContent === "Open for more") ? e.target.textContent = "Close for less" : e.target.textContent = "Open for more";
 		let buttonId = e.target.id
 		let buttonIndex = buttonId.charAt(buttonId.length-1)-1
@@ -211,6 +212,7 @@ fetch('http://api.icndb.com/jokes/random/3').then(function (response) {
 		jokeDivs[buttonIndex].style.display === 'none' ? 
 			jokeDivs[buttonIndex].style.display = 'block' :
 			jokeDivs[buttonIndex].style.display = 'none'  
+		}
 	})
 
 
